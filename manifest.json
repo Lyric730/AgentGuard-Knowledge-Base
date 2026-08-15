@@ -1,0 +1,700 @@
+{
+    "source_wiki":  "https://acntglrfp7bm.feishu.cn/wiki/PEl8wr8D7ipWSEkMOMfcZvPMnjd?fromScene=spaceOverview",
+    "space_id":  "7660539439638154438",
+    "exported_at":  "2026-08-15T13:31:06Z",
+    "node_count":  41,
+    "type_counts":  [
+                        {
+                            "type":  "docx",
+                            "count":  36
+                        },
+                        {
+                            "type":  "sheet",
+                            "count":  2
+                        },
+                        {
+                            "type":  "bitable",
+                            "count":  3
+                        }
+                    ],
+    "entries":  [
+                    {
+                        "title":  "AgentGuard SEO 从 0 到 1 增长执行方案",
+                        "node_token":  "PEl8wr8D7ipWSEkMOMfcZvPMnjd",
+                        "object_token":  "FNVAdHA2AosRXsx4yytcGSm7nbh",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/PEl8wr8D7ipWSEkMOMfcZvPMnjd",
+                        "local_path":  "docs/01-AgentGuard SEO 从 0 到 1 增长执行方案.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  18,
+                                        "document_id":  "FNVAdHA2AosRXsx4yytcGSm7nbh",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "Agent Guard SEO Weekly Sync",
+                        "node_token":  "ZJO8w0T94i5ozhk73sycKMrOnPf",
+                        "object_token":  "R0JMd5Hpco8mVjxDWgKc0MkknAf",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/ZJO8w0T94i5ozhk73sycKMrOnPf",
+                        "local_path":  "docs/02-Agent Guard SEO Weekly Sync.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  739,
+                                        "document_id":  "R0JMd5Hpco8mVjxDWgKc0MkknAf",
+                                        "asset_count":  2,
+                                        "asset_directory":  "docs/_assets/R0JMd5Hpco8mVjxDWgKc0MkknAf"
+                                    }
+                    },
+                    {
+                        "title":  "关键词表拓展步骤（P2+P3）",
+                        "node_token":  "Sg3twLO6ViIUTskXk0VcQaDNnNg",
+                        "object_token":  "MansdOPHEorvevx3rIgcWT02nPc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Sg3twLO6ViIUTskXk0VcQaDNnNg",
+                        "local_path":  "docs/03-关键词表拓展步骤（P2+P3）.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  176,
+                                        "document_id":  "MansdOPHEorvevx3rIgcWT02nPc",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 竞品调研与差异化竞争策略报告-V2",
+                        "node_token":  "VEgNwSFfRiUfk2kvte5ck5Ajn1f",
+                        "object_token":  "Q7JhdwOjKoaZbpxQYnwcVKHgnZf",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/VEgNwSFfRiUfk2kvte5ck5Ajn1f",
+                        "local_path":  "docs/04-AgentGuard 竞品调研与差异化竞争策略报告-V2.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  53,
+                                        "document_id":  "Q7JhdwOjKoaZbpxQYnwcVKHgnZf",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 网站架构与 URL Map-V2",
+                        "node_token":  "QG20w2pjfidJkkkNPoHcUFivnJf",
+                        "object_token":  "Q4nUdyHbqoByOtxL6LmcA4Ffnef",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/QG20w2pjfidJkkkNPoHcUFivnJf",
+                        "local_path":  "docs/05-AgentGuard 网站架构与 URL Map-V2.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  281,
+                                        "document_id":  "Q4nUdyHbqoByOtxL6LmcA4Ffnef",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 关键词与页面架构规划",
+                        "node_token":  "U1kvwaHMPiGOYCkWTzMcUePYnxe",
+                        "object_token":  "QPYIdZtuYoajKwxUn7vcHkdQnZc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/U1kvwaHMPiGOYCkWTzMcUePYnxe",
+                        "local_path":  "docs/06-AgentGuard 关键词与页面架构规划.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  132,
+                                        "document_id":  "QPYIdZtuYoajKwxUn7vcHkdQnZc",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard SEO页面执行总览",
+                        "node_token":  "Qup4w7GUOixMw9k184ncnLpnnDc",
+                        "object_token":  "XifTswbqIhQhqxtlCjecEx7pnPe",
+                        "object_type":  "sheet",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Qup4w7GUOixMw9k184ncnLpnnDc",
+                        "local_path":  "docs/07-AgentGuard SEO页面执行总览/README.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision":  189,
+                                        "sheet_count":  4,
+                                        "workbook":  "docs/07-AgentGuard SEO页面执行总览/AgentGuard SEO页面执行总览.xlsx"
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 关键词总表+候选池归档（内部使用）",
+                        "node_token":  "Qe3xwqnjkiXnrBkvyheczIg1nab",
+                        "object_token":  "Ibiissb4PhiwX5tvzcccXttznhb",
+                        "object_type":  "sheet",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Qe3xwqnjkiXnrBkvyheczIg1nab",
+                        "local_path":  "docs/08-AgentGuard 关键词总表+候选池归档（内部使用）/README.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision":  18,
+                                        "sheet_count":  3,
+                                        "workbook":  "docs/08-AgentGuard 关键词总表+候选池归档（内部使用）/AgentGuard 关键词总表+候选池归档（内部使用）.xlsx"
+                                    }
+                    },
+                    {
+                        "title":  "第二周任务执行清单（7.22-7.28）",
+                        "node_token":  "Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "object_token":  "NjnVdh1K3oaLuox6rlocsoGPnNc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  84,
+                                        "document_id":  "NjnVdh1K3oaLuox6rlocsoGPnNc",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "博客页面SEO模板规划",
+                        "node_token":  "DdEqwOHPni6OiRkHXOocY5eInZd",
+                        "object_token":  "KB02diMPlooGjzxho2RcJy6onSd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/DdEqwOHPni6OiRkHXOocY5eInZd",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/01-博客页面SEO模板规划/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  44,
+                                        "document_id":  "KB02diMPlooGjzxho2RcJy6onSd",
+                                        "asset_count":  1,
+                                        "asset_directory":  "docs/09-第二周任务执行清单（7.22-7.28）/01-博客页面SEO模板规划/_assets/KB02diMPlooGjzxho2RcJy6onSd"
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard Blog 模块需求文档",
+                        "node_token":  "Hl8iw9VZmi74EKkvrOhcR0Nan2K",
+                        "object_token":  "VINkd4JXJorJ6CxcbSLccMG7nmc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "DdEqwOHPni6OiRkHXOocY5eInZd",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Hl8iw9VZmi74EKkvrOhcR0Nan2K",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/01-博客页面SEO模板规划/01-AgentGuard Blog 模块需求文档.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  14,
+                                        "document_id":  "VINkd4JXJorJ6CxcbSLccMG7nmc",
+                                        "asset_count":  1,
+                                        "asset_directory":  "docs/09-第二周任务执行清单（7.22-7.28）/01-博客页面SEO模板规划/_assets/VINkd4JXJorJ6CxcbSLccMG7nmc"
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard Blog Schema JSON-LD 技术规范",
+                        "node_token":  "A8ZMwthd4i1vQ7knqNJc0geNnWb",
+                        "object_token":  "WgVUdpspIoDDTAxtfeaccr1anec",
+                        "object_type":  "docx",
+                        "parent_node_token":  "DdEqwOHPni6OiRkHXOocY5eInZd",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/A8ZMwthd4i1vQ7knqNJc0geNnWb",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/01-博客页面SEO模板规划/02-AgentGuard Blog Schema JSON-LD 技术规范.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  4,
+                                        "document_id":  "WgVUdpspIoDDTAxtfeaccr1anec",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 01 关键词与搜索意图映射",
+                        "node_token":  "Y8kpwmlvzia7YWkhTwLcFDAWn3b",
+                        "object_token":  "IYgddn7zoowt2cxLyv5ciZBen1U",
+                        "object_type":  "docx",
+                        "parent_node_token":  "Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Y8kpwmlvzia7YWkhTwLcFDAWn3b",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/02-AgentGuard 01 关键词与搜索意图映射.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  33,
+                                        "document_id":  "IYgddn7zoowt2cxLyv5ciZBen1U",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 02 页面信息架构",
+                        "node_token":  "BH18wlQu0iFhKFksA8RcVTJKndh",
+                        "object_token":  "B9OkdPiLEoBVsUxS3mWcKMWwn6d",
+                        "object_type":  "docx",
+                        "parent_node_token":  "Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/BH18wlQu0iFhKFksA8RcVTJKndh",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/03-AgentGuard 02 页面信息架构.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  158,
+                                        "document_id":  "B9OkdPiLEoBVsUxS3mWcKMWwn6d",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 03 英文 SEO 页面文案",
+                        "node_token":  "PQEFwZlfuihOymk7PpYc2XAEnuf",
+                        "object_token":  "IHECdwD8xoFSd5xJDvwci91anRf",
+                        "object_type":  "docx",
+                        "parent_node_token":  "Rh6Tw3Jcfi5FyZks2C4cBGUsnlb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/PQEFwZlfuihOymk7PpYc2XAEnuf",
+                        "local_path":  "docs/09-第二周任务执行清单（7.22-7.28）/04-AgentGuard 03 英文 SEO 页面文案.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  34,
+                                        "document_id":  "IHECdwD8xoFSd5xJDvwci91anRf",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第三周任务执行清单（7.29-8.4）",
+                        "node_token":  "XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "object_token":  "StKvdY6broR3P6xBPOWcndBrnze",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  19,
+                                        "document_id":  "StKvdY6broR3P6xBPOWcndBrnze",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 官网 PRD",
+                        "node_token":  "VJNewgucRi9m9OkTWQecwk7wnxh",
+                        "object_token":  "QRAEdjwncoEbaexjoYdcmDDonUd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/VJNewgucRi9m9OkTWQecwk7wnxh",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/01-AgentGuard 官网 PRD.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  110,
+                                        "document_id":  "QRAEdjwncoEbaexjoYdcmDDonUd",
+                                        "asset_count":  1,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/_assets/QRAEdjwncoEbaexjoYdcmDDonUd"
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 官网页面需求\u0026原型",
+                        "node_token":  "NILRwOlMYiRyjykSJJSckt6Lnxf",
+                        "object_token":  "TJoWdjiBOoML2CxhSXgcuA9pnDb",
+                        "object_type":  "docx",
+                        "parent_node_token":  "XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/NILRwOlMYiRyjykSJJSckt6Lnxf",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/02-AgentGuard 官网页面需求\u0026原型.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  73,
+                                        "document_id":  "TJoWdjiBOoML2CxhSXgcuA9pnDb",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard 官网设计规范",
+                        "node_token":  "KpUTwISWHiqYfTkjojKceDGwn3b",
+                        "object_token":  "Rs4tdqzarobeHgx4mVQcLp21nTc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/KpUTwISWHiqYfTkjojKceDGwn3b",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/03-AgentGuard 官网设计规范.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  12,
+                                        "document_id":  "Rs4tdqzarobeHgx4mVQcLp21nTc",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard首批博客内容",
+                        "node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "object_token":  "UxnYdGeZwooQYnxppawcqsycn8c",
+                        "object_type":  "docx",
+                        "parent_node_token":  "XG7uwQ9WAisgwykaA0OcDLzonvf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  25,
+                                        "document_id":  "UxnYdGeZwooQYnxppawcqsycn8c",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "What is Prompt Injection \u0026 How it Works",
+                        "node_token":  "LK0OwrbhsiKfW3k2JBIcuytHnpd",
+                        "object_token":  "V6aWdcncLoC2hsxoHjucW41inxb",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/LK0OwrbhsiKfW3k2JBIcuytHnpd",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/01-What is Prompt Injection \u0026 How it Works.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  28,
+                                        "document_id":  "V6aWdcncLoC2hsxoHjucW41inxb",
+                                        "asset_count":  3,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/V6aWdcncLoC2hsxoHjucW41inxb"
+                                    }
+                    },
+                    {
+                        "title":  "Choosing a Zenity Alternative for AI Agent Security",
+                        "node_token":  "XBjvw8wV8iUZANkQEBDcrt84n1e",
+                        "object_token":  "SP4YdDxQGoMfYaxUqnccQwI3nyd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/XBjvw8wV8iUZANkQEBDcrt84n1e",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/02-Choosing a Zenity Alternative for AI Agent Security.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  14,
+                                        "document_id":  "SP4YdDxQGoMfYaxUqnccQwI3nyd",
+                                        "asset_count":  2,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/SP4YdDxQGoMfYaxUqnccQwI3nyd"
+                                    }
+                    },
+                    {
+                        "title":  "How LLM Agents Are Exploited: Attack Paths and Defenses",
+                        "node_token":  "DYgewwDb8i65a1kkbSvcTRVfn1c",
+                        "object_token":  "PWhMd0R4iogFVLxRO2Dcgrpanqa",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/DYgewwDb8i65a1kkbSvcTRVfn1c",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/03-How LLM Agents Are Exploited - Attack Paths and Defenses.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  25,
+                                        "document_id":  "PWhMd0R4iogFVLxRO2Dcgrpanqa",
+                                        "asset_count":  4,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/PWhMd0R4iogFVLxRO2Dcgrpanqa"
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard vs Lakera: What Each Product Actually Covers",
+                        "node_token":  "TjtTw78P7isiukkyScDcBtkVnFe",
+                        "object_token":  "ZSF0dvQuyoWBnRxCRgyc8ZeRnrh",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/TjtTw78P7isiukkyScDcBtkVnFe",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/04-AgentGuard vs Lakera - What Each Product Actually Covers.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  19,
+                                        "document_id":  "ZSF0dvQuyoWBnRxCRgyc8ZeRnrh",
+                                        "asset_count":  3,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/ZSF0dvQuyoWBnRxCRgyc8ZeRnrh"
+                                    }
+                    },
+                    {
+                        "title":  "Agent Dependency Pollution: A Working Definition",
+                        "node_token":  "Z3mEw8U4pibfevkIA4XcMEwrndc",
+                        "object_token":  "IxOCdSDIgoQ9V1xqN8Oczhg3ntd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Z3mEw8U4pibfevkIA4XcMEwrndc",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/05-Agent Dependency Pollution - A Working Definition.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  25,
+                                        "document_id":  "IxOCdSDIgoQ9V1xqN8Oczhg3ntd",
+                                        "asset_count":  3,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/IxOCdSDIgoQ9V1xqN8Oczhg3ntd"
+                                    }
+                    },
+                    {
+                        "title":  "Can You Trust an MCP Response? Four Failure Paths to Test",
+                        "node_token":  "ELWowFKbviRxrLk0M5nchgpAnDe",
+                        "object_token":  "UhzidwhdFoCZUBx5yuLcOrUznVe",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/ELWowFKbviRxrLk0M5nchgpAnDe",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/06-Can You Trust an MCP Response - Four Failure Paths to Test.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  20,
+                                        "document_id":  "UhzidwhdFoCZUBx5yuLcOrUznVe",
+                                        "asset_count":  3,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/UhzidwhdFoCZUBx5yuLcOrUznVe"
+                                    }
+                    },
+                    {
+                        "title":  "Which MCP Security Tool Fits Your Stack? 7 Options Compared",
+                        "node_token":  "Tm5awBSpIiYMy8kEGq5caDSznYT",
+                        "object_token":  "UqIDdFhjDolHewxwJ9QcUjS4nre",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/Tm5awBSpIiYMy8kEGq5caDSznYT",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/07-Which MCP Security Tool Fits Your Stack - 7 Options Compared.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  95,
+                                        "document_id":  "UqIDdFhjDolHewxwJ9QcUjS4nre",
+                                        "asset_count":  5,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/UqIDdFhjDolHewxwJ9QcUjS4nre"
+                                    }
+                    },
+                    {
+                        "title":  "How Enterprises Can Secure AI Agents in Production",
+                        "node_token":  "TyCywgbbbin6WJkkkzXcz1yOn9f",
+                        "object_token":  "BnQJdEY1zo6vblxp8CScYuYvnCc",
+                        "object_type":  "docx",
+                        "parent_node_token":  "BsRfwqmWximhoBk51z6clY0Vnlf",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/TyCywgbbbin6WJkkkzXcz1yOn9f",
+                        "local_path":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/08-How Enterprises Can Secure AI Agents in Production.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  76,
+                                        "document_id":  "BnQJdEY1zo6vblxp8CScYuYvnCc",
+                                        "asset_count":  4,
+                                        "asset_directory":  "docs/10-第三周任务执行清单（7.29-8.4）/04-AgentGuard首批博客内容/_assets/BnQJdEY1zo6vblxp8CScYuYvnCc"
+                                    }
+                    },
+                    {
+                        "title":  "SEO 流程优化-需求记录",
+                        "node_token":  "VxslwBZc0iecGVkEMm3cNXG9nff",
+                        "object_token":  "XGxGbfAW4athkDsoHEUcHW6Dn3d",
+                        "object_type":  "bitable",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/VxslwBZc0iecGVkEMm3cNXG9nff",
+                        "local_path":  "docs/11-SEO 流程优化-需求记录/README.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "base_token":  "XGxGbfAW4athkDsoHEUcHW6Dn3d",
+                                        "table_count":  1,
+                                        "tables":  [
+                                                       {
+                                                           "table_id":  "tblv2x4k9btRwyCk",
+                                                           "name":  "Table",
+                                                           "field_count":  6,
+                                                           "record_count":  4,
+                                                           "revision":  47,
+                                                           "path":  "docs/11-SEO 流程优化-需求记录/01-Table"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "title":  "第四周任务执行清单（8.5-8.11）",
+                        "node_token":  "I68pwXGYMirZV4kB9VKc0MBlnLh",
+                        "object_token":  "XkiudGmgUoniE7xik8Tch5eHnwh",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/I68pwXGYMirZV4kB9VKc0MBlnLh",
+                        "local_path":  "docs/12-第四周任务执行清单（8.5-8.11）/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  22,
+                                        "document_id":  "XkiudGmgUoniE7xik8Tch5eHnwh",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "Blog更新",
+                        "node_token":  "W07owR6XKieRDrkOrMrcrCCbnue",
+                        "object_token":  "Le5Hd8ffeomhVJxG4X4cOGepnBG",
+                        "object_type":  "docx",
+                        "parent_node_token":  "I68pwXGYMirZV4kB9VKc0MBlnLh",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/W07owR6XKieRDrkOrMrcrCCbnue",
+                        "local_path":  "docs/12-第四周任务执行清单（8.5-8.11）/01-Blog更新.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  7,
+                                        "document_id":  "Le5Hd8ffeomhVJxG4X4cOGepnBG",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard内容生产规划",
+                        "node_token":  "GJo4wgLDlijN0SkFWHOco3PQnXP",
+                        "object_token":  "BIsybHxZTaSNBEsLsusc8eKPnf6",
+                        "object_type":  "bitable",
+                        "parent_node_token":  "I68pwXGYMirZV4kB9VKc0MBlnLh",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/GJo4wgLDlijN0SkFWHOco3PQnXP",
+                        "local_path":  "docs/12-第四周任务执行清单（8.5-8.11）/02-AgentGuard内容生产规划/README.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "base_token":  "BIsybHxZTaSNBEsLsusc8eKPnf6",
+                                        "table_count":  1,
+                                        "tables":  [
+                                                       {
+                                                           "table_id":  "tblJtBHo4kUTw25q",
+                                                           "name":  "Table",
+                                                           "field_count":  17,
+                                                           "record_count":  284,
+                                                           "revision":  2,
+                                                           "path":  "docs/12-第四周任务执行清单（8.5-8.11）/02-AgentGuard内容生产规划/01-Table"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "title":  "AgentGuard内容生产规划",
+                        "node_token":  "AzfGwFtOwiqDjAkaY8NcXeX1nNc",
+                        "object_token":  "DLrmbcsj3aejgwsepVBcRJD8nOe",
+                        "object_type":  "bitable",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/AzfGwFtOwiqDjAkaY8NcXeX1nNc",
+                        "local_path":  "docs/13-AgentGuard内容生产规划/README.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "base_token":  "DLrmbcsj3aejgwsepVBcRJD8nOe",
+                                        "table_count":  1,
+                                        "tables":  [
+                                                       {
+                                                           "table_id":  "tblUrAV1r2xB6UCN",
+                                                           "name":  "Table",
+                                                           "field_count":  17,
+                                                           "record_count":  284,
+                                                           "revision":  149,
+                                                           "path":  "docs/13-AgentGuard内容生产规划/01-Table"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "title":  "SEO 客户服务 SOP 总览",
+                        "node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "object_token":  "IR1HdBm8doDlhDx8wtBcv0Xtnve",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  15,
+                                        "document_id":  "IR1HdBm8doDlhDx8wtBcv0Xtnve",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第一阶段 SOP：站点摸底与技术 SEO 基线",
+                        "node_token":  "UO81wEh39iCgxoki9o2cWPe3nlf",
+                        "object_token":  "Ietpd7N9aoxSisxHC6jcCtawnmd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/UO81wEh39iCgxoki9o2cWPe3nlf",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/01-第一阶段 SOP：站点摸底与技术 SEO 基线.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  6,
+                                        "document_id":  "Ietpd7N9aoxSisxHC6jcCtawnmd",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第二阶段 SOP：竞品、页面和关键词母库",
+                        "node_token":  "NC7JwlOPaiItG4kyo2Yc5NpEnBf",
+                        "object_token":  "BDWhdmQSooYCYmx93mnc0wyknZb",
+                        "object_type":  "docx",
+                        "parent_node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/NC7JwlOPaiItG4kyo2Yc5NpEnBf",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/02-第二阶段 SOP：竞品、页面和关键词母库.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  4,
+                                        "document_id":  "BDWhdmQSooYCYmx93mnc0wyknZb",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第三阶段 SOP：核心页面策划与 Blog 模板",
+                        "node_token":  "GkcqwQZwtiFFNekADYkcC9bOnI1",
+                        "object_token":  "EtHTdEsFSoi1FAxoslwcvGFjnzf",
+                        "object_type":  "docx",
+                        "parent_node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/GkcqwQZwtiFFNekADYkcC9bOnI1",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/03-第三阶段 SOP：核心页面策划与 Blog 模板.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  3,
+                                        "document_id":  "EtHTdEsFSoi1FAxoslwcvGFjnzf",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第四阶段 SOP：单篇 Blog 生产、QA 与交付",
+                        "node_token":  "A8v5wyWMsix6gck2nPXcBovQneb",
+                        "object_token":  "N646d1FLOoGGxFxfIWNcG0Lunid",
+                        "object_type":  "docx",
+                        "parent_node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/A8v5wyWMsix6gck2nPXcBovQneb",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/04-第四阶段 SOP：单篇 Blog 生产、QA 与交付.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  5,
+                                        "document_id":  "N646d1FLOoGGxFxfIWNcG0Lunid",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第五阶段 SOP：下一批内容规划与 Brief 标准化",
+                        "node_token":  "NcBIwmkZOiTpzdk3g2LcSKF1nBe",
+                        "object_token":  "D206dWr61oDgBRxLkDUcF2GmnRb",
+                        "object_type":  "docx",
+                        "parent_node_token":  "EduKwQkxLia1sYk3HoUctmpVnTb",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/NcBIwmkZOiTpzdk3g2LcSKF1nBe",
+                        "local_path":  "docs/14-SEO 客户服务 SOP 总览/05-第五阶段 SOP：下一批内容规划与 Brief 标准化.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  3,
+                                        "document_id":  "D206dWr61oDgBRxLkDUcF2GmnRb",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "第五周任务执行清单（8.12-8.18）",
+                        "node_token":  "XdhXwCpTPiRofgkwLh1crwOznvf",
+                        "object_token":  "GpjudcxEGowZbGx6lTocEmLsnFd",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/XdhXwCpTPiRofgkwLh1crwOznvf",
+                        "local_path":  "docs/15-第五周任务执行清单（8.12-8.18）/README.md",
+                        "has_child":  true,
+                        "details":  {
+                                        "revision_id":  151,
+                                        "document_id":  "GpjudcxEGowZbGx6lTocEmLsnFd",
+                                        "asset_count":  0,
+                                        "asset_directory":  null
+                                    }
+                    },
+                    {
+                        "title":  "GSC接入指南",
+                        "node_token":  "KTkQwziB2ii4uOkVOSRcwh4un9g",
+                        "object_token":  "FqXYdRy4NoVxOHxxBPxc9p2xnic",
+                        "object_type":  "docx",
+                        "parent_node_token":  "",
+                        "source_url":  "https://acntglrfp7bm.feishu.cn/wiki/KTkQwziB2ii4uOkVOSRcwh4un9g",
+                        "local_path":  "docs/16-GSC接入指南.md",
+                        "has_child":  false,
+                        "details":  {
+                                        "revision_id":  121,
+                                        "document_id":  "FqXYdRy4NoVxOHxxBPxc9p2xnic",
+                                        "asset_count":  3,
+                                        "asset_directory":  "docs/_assets/FqXYdRy4NoVxOHxxBPxc9p2xnic"
+                                    }
+                    }
+                ]
+}

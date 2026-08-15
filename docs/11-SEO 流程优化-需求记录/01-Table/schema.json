@@ -1,0 +1,122 @@
+{
+    "table":  {
+                  "id":  "tblv2x4k9btRwyCk",
+                  "name":  "Table",
+                  "records_count":  4,
+                  "rev":  47
+              },
+    "fields":  [
+                   {
+                       "default_value":  null,
+                       "id":  "fldsWPoJ29",
+                       "multiple":  false,
+                       "name":  "状态",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "任务池"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "进行中"
+                                       },
+                                       {
+                                           "hue":  "Wathet",
+                                           "lightness":  "Lighter",
+                                           "name":  "已完成"
+                                       },
+                                       {
+                                           "hue":  "Yellow",
+                                           "lightness":  "Lighter",
+                                           "name":  "Arhieved"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldjw9YRiI",
+                       "multiple":  false,
+                       "name":  "跟进人",
+                       "type":  "user"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldVefjPsb",
+                       "name":  "备注",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldsvLafJl",
+                       "multiple":  false,
+                       "name":  "优先级",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "高"
+                                       },
+                                       {
+                                           "hue":  "Wathet",
+                                           "lightness":  "Lighter",
+                                           "name":  "中"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "低"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fld2R5ONdG",
+                       "name":  "描述",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldNhkgDMk",
+                       "multiple":  false,
+                       "name":  "所属环节",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "关键词研究"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "内容建设"
+                                       },
+                                       {
+                                           "hue":  "Wathet",
+                                           "lightness":  "Lighter",
+                                           "name":  "外链建设"
+                                       },
+                                       {
+                                           "hue":  "Yellow",
+                                           "lightness":  "Lighter",
+                                           "name":  "技术优化"
+                                       },
+                                       {
+                                           "hue":  "Turquoise",
+                                           "lightness":  "Lighter",
+                                           "name":  "客户研究"
+                                       }
+                                   ],
+                       "type":  "select"
+                   }
+               ]
+}

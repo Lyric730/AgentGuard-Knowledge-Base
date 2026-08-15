@@ -1,0 +1,211 @@
+{
+    "table":  {
+                  "id":  "tblUrAV1r2xB6UCN",
+                  "name":  "Table",
+                  "records_count":  284,
+                  "rev":  149
+              },
+    "fields":  [
+                   {
+                       "default_value":  null,
+                       "id":  "fldQPd4qov",
+                       "multiple":  false,
+                       "name":  "优先级",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "P0"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "P1"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldGlXbdEN",
+                       "name":  "发布时间",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldQXl2Qup",
+                       "name":  "页面任务",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fld9daRTjM",
+                       "name":  "正式 URL",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "flddZ8Z5uJ",
+                       "name":  "主 CTA",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldpLnFPIQ",
+                       "multiple":  false,
+                       "name":  "状态",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "已上线"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "未上线"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldCdjIN22",
+                       "multiple":  false,
+                       "name":  "负责人",
+                       "type":  "user"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldcyiRoDC",
+                       "name":  "US 搜索量",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fld2JlzNzT",
+                       "name":  "搜索意图",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldYaS4gmh",
+                       "name":  "全球搜索量",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldowFv0PU",
+                       "multiple":  false,
+                       "name":  "内容类型",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "Best"
+                                       },
+                                       {
+                                           "hue":  "Orange",
+                                           "lightness":  "Lighter",
+                                           "name":  "Review"
+                                       },
+                                       {
+                                           "hue":  "Wathet",
+                                           "lightness":  "Lighter",
+                                           "name":  "Compare"
+                                       },
+                                       {
+                                           "hue":  "Yellow",
+                                           "lightness":  "Lighter",
+                                           "name":  "Guide"
+                                       },
+                                       {
+                                           "hue":  "Turquoise",
+                                           "lightness":  "Lighter",
+                                           "name":  "Glossary"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldzRMWg9N",
+                       "multiple":  false,
+                       "name":  "所属模块",
+                       "options":  [
+                                       {
+                                           "hue":  "Blue",
+                                           "lightness":  "Lighter",
+                                           "name":  "Blog"
+                                       }
+                                   ],
+                       "type":  "select"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldTIE1RtQ",
+                       "name":  "全球 CPC",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fld8p5jj79",
+                       "name":  "US CPC",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fld9yQ61hK",
+                       "name":  "主关键词",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldbtYgkGz",
+                       "name":  "辅助关键词",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   },
+                   {
+                       "default_value":  null,
+                       "id":  "fldI4qTONa",
+                       "name":  "Blog标题",
+                       "style":  {
+                                     "type":  "plain"
+                                 },
+                       "type":  "text"
+                   }
+               ]
+}

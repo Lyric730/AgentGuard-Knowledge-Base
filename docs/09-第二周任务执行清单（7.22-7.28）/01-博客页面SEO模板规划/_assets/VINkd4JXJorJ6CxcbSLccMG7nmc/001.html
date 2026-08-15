@@ -1,0 +1,2224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AgentGuard blog prototype for AI agent security guides, reviews, comparisons, recommendations, and glossary articles.">
+  <title>AgentGuard Blog Prototype</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232b86ff'/%3E%3Cpath d='M9 16h14M16 9v14' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #0e1013;
+      --header: rgba(14, 16, 19, 0.94);
+      --surface: #15181d;
+      --surface-strong: #191c21;
+      --surface-hover: #1d2128;
+      --text: #ffffff;
+      --text-soft: #e2e8f0;
+      --muted: #aeb6c4;
+      --muted-strong: #8f96a3;
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.2);
+      --accent: #2b86ff;
+      --accent-hover: #55a0ff;
+      --accent-soft: rgba(43, 134, 255, 0.12);
+      --max-width: 1240px;
+      --header-height: 72px;
+      --radius: 8px;
+      --font-display: "Montserrat", Arial, sans-serif;
+      --font-body: "Inter", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--page);
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: var(--page);
+      color: var(--text-soft);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      transform: translateY(-150%);
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .brand {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      width: 150px;
+      min-height: 32px;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+    }
+
+    .primary-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-right: auto;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .primary-nav a,
+    .primary-nav .nav-disabled,
+    .nav-menu-trigger {
+      color: rgba(255, 255, 255, 0.64);
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a[aria-current="page"],
+    .nav-menu-trigger:hover,
+    .nav-menu-trigger[aria-expanded="true"] {
+      color: var(--text);
+    }
+
+    .primary-nav .nav-disabled {
+      cursor: default;
+    }
+
+    .nav-menu {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: var(--header-height);
+    }
+
+    .nav-menu-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      cursor: pointer;
+    }
+
+    .nav-menu-trigger svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 160ms ease;
+    }
+
+    .nav-menu-trigger[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% - 6px);
+      left: -18px;
+      width: 224px;
+      display: grid;
+      gap: 2px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #13161b;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.38);
+    }
+
+    .nav-dropdown span {
+      display: block;
+      padding: 10px 10px;
+      border-radius: 5px;
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: default;
+    }
+
+    .nav-dropdown span:hover {
+      background: var(--surface-hover);
+      color: var(--text-soft);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.86);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .mobile-menu-button {
+      width: 40px;
+      height: 40px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    main {
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .blog-hero {
+      padding: 78px 0 44px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      color: var(--text);
+      font-family: var(--font-display);
+      letter-spacing: 0;
+    }
+
+    .blog-hero h1 {
+      max-width: 820px;
+      margin-bottom: 18px;
+      font-size: 72px;
+      font-weight: 600;
+      line-height: 1.06;
+    }
+
+    .blog-hero p {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .discovery-bar {
+      padding: 32px 0 0;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(260px, 460px) 1fr;
+      align-items: end;
+      gap: 32px;
+    }
+
+    .search-field {
+      position: relative;
+    }
+
+    .search-field label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .search-field svg {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      width: 18px;
+      height: 18px;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-field input {
+      width: 100%;
+      height: 48px;
+      padding: 0 46px 0 46px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .search-field input::placeholder {
+      color: var(--muted-strong);
+    }
+
+    .search-field input:hover,
+    .search-field input:focus {
+      border-color: rgba(43, 134, 255, 0.7);
+      background: var(--surface-strong);
+      outline: none;
+    }
+
+    .clear-search {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      width: 34px;
+      height: 34px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-50%);
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .clear-search.visible {
+      display: inline-flex;
+    }
+
+    .category-tabs {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+      scrollbar-width: none;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-tab {
+      position: relative;
+      min-height: 48px;
+      flex: 0 0 auto;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .category-tab::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 2px;
+      transform: scaleX(0);
+      background: var(--accent);
+      content: "";
+      transition: transform 160ms ease;
+    }
+
+    .category-tab:hover {
+      color: var(--text-soft);
+    }
+
+    .category-tab[aria-selected="true"] {
+      color: var(--text);
+    }
+
+    .category-tab[aria-selected="true"]::after {
+      transform: scaleX(1);
+    }
+
+    .results-meta {
+      min-height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 26px 0 16px;
+      color: var(--muted-strong);
+      font-size: 13px;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding-bottom: 88px;
+    }
+
+    .article-card,
+    .related-card {
+      position: relative;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .article-card:hover,
+    .related-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(43, 134, 255, 0.52);
+      background: var(--surface-hover);
+    }
+
+    .card-button,
+    .related-button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .card-button {
+      min-height: 258px;
+      padding: 24px;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      color: var(--muted-strong);
+      font-size: 12px;
+    }
+
+    .category-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 2px 8px;
+      border: 1px solid rgba(43, 134, 255, 0.36);
+      border-radius: 5px;
+      background: var(--accent-soft);
+      color: #8fc0ff;
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      margin: 0 0 16px;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .card-excerpt {
+      display: -webkit-box;
+      margin: 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    .card-byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      margin-top: 16px;
+      color: var(--muted-strong);
+      font-size: 11px;
+    }
+
+    .card-byline .byline-author {
+      color: #b8c5d8;
+    }
+
+    .meta-dot {
+      color: #59616e;
+    }
+
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 22px;
+      color: var(--text-soft);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .card-action svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      transition: transform 160ms ease;
+    }
+
+    .article-card:hover .card-action svg,
+    .related-card:hover .card-action svg {
+      transform: translateX(3px);
+    }
+
+    .empty-state {
+      margin: 12px 0 88px;
+      padding: 56px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty-state h2 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .empty-state p {
+      margin: 0;
+    }
+
+    .detail-view {
+      padding: 30px 0 96px;
+    }
+
+    .detail-topbar {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--text-soft);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .back-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .breadcrumb-separator {
+      color: #59616e;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 820px);
+      align-items: start;
+      justify-content: center;
+      gap: 76px;
+    }
+
+    .toc {
+      position: sticky;
+      top: calc(var(--header-height) + 30px);
+      max-height: calc(100vh - var(--header-height) - 60px);
+      overflow: auto;
+      padding-right: 20px;
+    }
+
+    .toc-title {
+      margin: 0 0 18px;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .toc-list {
+      display: grid;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc-link {
+      width: 100%;
+      display: block;
+      padding: 9px 0 9px 14px;
+      border: 0;
+      border-left: 1px solid var(--line-strong);
+      background: transparent;
+      color: var(--muted-strong);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .toc-link:hover,
+    .toc-link.active {
+      border-left-color: var(--accent);
+      color: var(--text);
+    }
+
+    .article-header {
+      margin-bottom: 54px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .article-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .article-header h1 {
+      margin-bottom: 22px;
+      font-size: 58px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .article-deck {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .article-byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin-top: 24px;
+      color: var(--muted-strong);
+      font-size: 13px;
+    }
+
+    .author-link {
+      color: #8fc0ff;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(143, 192, 255, 0.46);
+      text-underline-offset: 4px;
+    }
+
+    .author-link:hover {
+      color: #b8d7ff;
+    }
+
+    .article-section {
+      scroll-margin-top: calc(var(--header-height) + 30px);
+      margin-bottom: 52px;
+    }
+
+    .article-section h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.28;
+    }
+
+    .article-section h3 {
+      margin: 32px 0 12px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .article-section p,
+    .article-section li {
+      color: #c3cad5;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .article-section p {
+      margin: 0 0 20px;
+    }
+
+    .article-section ul {
+      margin: 0 0 24px;
+      padding-left: 22px;
+    }
+
+    .article-section li {
+      margin-bottom: 8px;
+    }
+
+    .article-section a {
+      color: #72adff;
+      text-decoration-color: rgba(114, 173, 255, 0.48);
+      text-underline-offset: 4px;
+    }
+
+    .article-section a:hover {
+      color: #a9ceff;
+    }
+
+    .code-note {
+      margin: 26px 0;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #111419;
+      color: #d7deea;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .faq-section {
+      margin-top: 72px;
+      margin-bottom: 0;
+      padding-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-section h2 {
+      margin: 0 0 24px;
+    }
+
+    .faq-list {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item summary {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.45;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::marker {
+      content: "";
+    }
+
+    .faq-item summary:hover {
+      color: #b8d7ff;
+    }
+
+    .faq-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      color: var(--muted);
+      transition: transform 160ms ease, color 160ms ease;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-width: 720px;
+      padding: 0 48px 20px 0;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: #c3cad5;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .related-section {
+      margin-top: 76px;
+      padding-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    .related-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .related-heading h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .related-heading span {
+      color: var(--muted-strong);
+      font-size: 12px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .related-button {
+      min-height: 188px;
+      padding: 18px;
+    }
+
+    .related-card .card-meta {
+      margin-bottom: 16px;
+    }
+
+    .related-card .card-title {
+      margin-bottom: 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: #0b0d10;
+    }
+
+    .footer-shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(190px, 1.35fr) repeat(5, minmax(116px, 1fr));
+      align-items: start;
+      gap: 42px;
+      padding: 64px 0 56px;
+      color: var(--muted-strong);
+      font-size: 12px;
+    }
+
+    .footer-brand {
+      max-width: 220px;
+    }
+
+    .footer-brand img {
+      width: 148px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      margin: 0;
+      color: var(--muted-strong);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .footer-group h2 {
+      margin: 0 0 18px;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer-group h2 button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .footer-list {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-list span,
+    .footer-list a {
+      display: inline-block;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .footer-list span {
+      cursor: default;
+    }
+
+    .footer-list a:hover,
+    .footer-group h2 button:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-shell,
+      .shell,
+      .footer-shell {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      .primary-nav {
+        gap: 16px;
+        font-size: 12px;
+      }
+
+      .nav-shell {
+        gap: 24px;
+      }
+
+      .nav-button {
+        padding: 0 14px;
+      }
+
+      .blog-hero h1 {
+        font-size: 56px;
+      }
+
+      .article-header h1 {
+        font-size: 48px;
+      }
+
+      .search-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .detail-layout {
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 40px;
+      }
+
+      .footer-shell {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px 28px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 64px;
+      }
+
+      .nav-shell,
+      .shell,
+      .footer-shell {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .brand,
+      .brand img {
+        width: 132px;
+      }
+
+      .primary-nav,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        left: 0;
+        z-index: 45;
+        display: block;
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+        border-bottom: 1px solid var(--line);
+        background: #111419;
+      }
+
+      .mobile-nav-link,
+      .mobile-nav-static,
+      .mobile-nav-trigger {
+        width: 100%;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--line);
+        background: transparent;
+        color: var(--text-soft);
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .mobile-nav-trigger {
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .mobile-nav-trigger svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 160ms ease;
+      }
+
+      .mobile-nav-trigger[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+      }
+
+      .mobile-nav-submenu {
+        display: grid;
+        padding: 6px 0;
+        border-bottom: 1px solid var(--line);
+        background: #0d1014;
+      }
+
+      .mobile-nav-submenu span {
+        padding: 10px 20px 10px 34px;
+        color: var(--muted);
+        font-size: 13px;
+        cursor: default;
+      }
+
+      .mobile-nav-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 14px 20px 18px;
+      }
+
+      .mobile-nav-actions .nav-button {
+        min-width: 0;
+        padding: 0 12px;
+      }
+
+      .blog-hero {
+        padding: 54px 0 34px;
+      }
+
+      .blog-hero h1 {
+        font-size: 42px;
+      }
+
+      .blog-hero p {
+        font-size: 16px;
+      }
+
+      .discovery-bar {
+        padding-top: 24px;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-button {
+        min-height: 228px;
+      }
+
+      .detail-view {
+        padding-top: 20px;
+      }
+
+      .detail-topbar {
+        margin-bottom: 30px;
+      }
+
+      .detail-layout {
+        display: block;
+      }
+
+      .toc {
+        position: static;
+        max-height: none;
+        margin-bottom: 38px;
+        padding: 18px;
+        overflow: visible;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .toc-title {
+        margin-bottom: 12px;
+      }
+
+      .toc-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .toc-link {
+        padding: 7px 10px;
+        border: 0;
+        border-left: 1px solid var(--line-strong);
+      }
+
+      .article-header {
+        margin-bottom: 40px;
+      }
+
+      .article-header h1 {
+        font-size: 38px;
+      }
+
+      .article-deck {
+        font-size: 16px;
+      }
+
+      .article-section h2 {
+        font-size: 26px;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-shell {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 24px;
+        padding: 48px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .category-tabs {
+        gap: 20px;
+      }
+
+      .results-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .toc-list,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-button {
+        min-height: 158px;
+      }
+
+      .article-header h1 {
+        font-size: 34px;
+      }
+
+      .article-section p,
+      .article-section li {
+        font-size: 15px;
+      }
+
+      .faq-item summary {
+        min-height: 62px;
+        gap: 16px;
+        font-size: 16px;
+      }
+
+      .faq-answer {
+        padding-right: 0;
+      }
+
+      .faq-answer p {
+        font-size: 15px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-group:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <div class="brand" aria-label="AgentGuard">
+        <img src="https://www.agentguard.one/AgentGuard.svg" alt="AgentGuard">
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <div class="nav-menu">
+          <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="features-menu">
+            Features
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown" id="features-menu" hidden>
+            <span>Runtime Guard</span>
+            <span>Deep Scan</span>
+            <span>OpenClaw Patrol</span>
+            <span>Threat Intelligence</span>
+          </div>
+        </div>
+        <div class="nav-menu">
+          <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="solutions-menu">
+            Solutions
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown" id="solutions-menu" hidden>
+            <span>For Developers</span>
+            <span>For Security Teams</span>
+            <span>For Enterprise</span>
+            <span>MCP &amp; Agent Security</span>
+          </div>
+        </div>
+        <div class="nav-menu">
+          <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="resources-menu">
+            Resources
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown" id="resources-menu" hidden>
+            <span>Docs</span>
+            <span>API Reference</span>
+            <span>Changelog</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+        <span class="nav-disabled">Pricing</span>
+        <a href="#blog" aria-current="page">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="nav-button">Book a demo</span>
+        <span class="nav-button primary">Start Free</span>
+      </div>
+      <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="mobile-features-menu">
+        Features
+        <i data-lucide="chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="mobile-nav-submenu" id="mobile-features-menu" hidden>
+        <span>Runtime Guard</span>
+        <span>Deep Scan</span>
+        <span>OpenClaw Patrol</span>
+        <span>Threat Intelligence</span>
+      </div>
+    </div>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="mobile-solutions-menu">
+        Solutions
+        <i data-lucide="chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="mobile-nav-submenu" id="mobile-solutions-menu" hidden>
+        <span>For Developers</span>
+        <span>For Security Teams</span>
+        <span>For Enterprise</span>
+        <span>MCP &amp; Agent Security</span>
+      </div>
+    </div>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="mobile-resources-menu">
+        Resources
+        <i data-lucide="chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="mobile-nav-submenu" id="mobile-resources-menu" hidden>
+        <span>Docs</span>
+        <span>API Reference</span>
+        <span>Changelog</span>
+        <span>GitHub</span>
+      </div>
+    </div>
+    <span class="mobile-nav-static">Pricing</span>
+    <a class="mobile-nav-link" href="#blog">Blog</a>
+    <div class="mobile-nav-actions">
+      <span class="nav-button">Book a demo</span>
+      <span class="nav-button primary">Start Free</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section id="list-view" aria-labelledby="blog-title">
+      <div class="shell">
+        <header class="blog-hero">
+          <p class="eyebrow">AgentGuard Research</p>
+          <h1 id="blog-title">Security thinking for the agentic era.</h1>
+          <p>Practical guidance, independent reviews, and clear explanations for teams building AI agents that can take real action.</p>
+        </header>
+
+        <div class="discovery-bar">
+          <div class="search-row">
+            <div class="search-field">
+              <label for="blog-search">Search articles</label>
+              <i data-lucide="search" aria-hidden="true"></i>
+              <input id="blog-search" type="search" autocomplete="off" placeholder="Search titles, topics, or categories">
+              <button class="clear-search" id="clear-search" type="button" aria-label="Clear search">
+                <i data-lucide="x" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Blog categories"></div>
+          </div>
+        </div>
+
+        <div class="results-meta" aria-live="polite">
+          <span id="result-count"></span>
+          <span id="active-filter-label"></span>
+        </div>
+
+        <div class="article-grid" id="article-grid"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h2>No articles found</h2>
+          <p>Try another keyword or choose a different category.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-view" id="detail-view" aria-labelledby="article-title" hidden>
+      <div class="shell">
+        <div class="detail-topbar">
+          <button class="back-button" id="back-button" type="button">
+            <i data-lucide="arrow-left" aria-hidden="true"></i>
+            All articles
+          </button>
+          <span class="breadcrumb-separator">/</span>
+          <span id="detail-category-breadcrumb"></span>
+        </div>
+
+        <div class="detail-layout">
+          <aside class="toc" aria-label="Table of contents">
+            <p class="toc-title">On this page</p>
+            <ol class="toc-list" id="toc-list"></ol>
+          </aside>
+
+          <article>
+            <header class="article-header">
+              <div class="article-kicker">
+                <span class="category-label" id="detail-category"></span>
+                <time id="detail-date"></time>
+              </div>
+              <h1 id="article-title"></h1>
+              <p class="article-deck" id="article-deck"></p>
+              <div class="article-byline">
+                <span>By <a class="author-link" id="detail-author" href="#" data-author-link></a></span>
+                <span class="meta-dot" aria-hidden="true">/</span>
+                <span id="detail-reading-time"></span>
+              </div>
+            </header>
+
+            <div id="article-body"></div>
+
+            <section class="article-section faq-section" id="faq-section" aria-labelledby="faq-title" hidden>
+              <h2 id="faq-title">Frequently Asked Questions</h2>
+              <div class="faq-list" id="faq-list"></div>
+            </section>
+
+            <section class="related-section" aria-labelledby="related-title">
+              <div class="related-heading">
+                <h2 id="related-title">Related</h2>
+                <span>Continue exploring</span>
+              </div>
+              <div class="related-grid" id="related-grid"></div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <img src="https://www.agentguard.one/AgentGuard.svg" alt="AgentGuard">
+        <p>AI agent security by GoPlus Security.</p>
+      </div>
+      <nav class="footer-group" aria-labelledby="footer-product-title">
+        <h2 id="footer-product-title">Product</h2>
+        <ul class="footer-list">
+          <li><span>Features</span></li>
+          <li><span>Solutions</span></li>
+          <li><span>Pricing</span></li>
+          <li><span>Dashboard</span></li>
+        </ul>
+      </nav>
+      <nav class="footer-group" aria-labelledby="footer-resources-title">
+        <h2 id="footer-resources-title">Resources</h2>
+        <ul class="footer-list">
+          <li><span>Docs</span></li>
+          <li><span>API Reference</span></li>
+          <li><span>Changelog</span></li>
+          <li><span>GitHub</span></li>
+        </ul>
+      </nav>
+      <nav class="footer-group" aria-labelledby="footer-blog-title">
+        <h2 id="footer-blog-title"><button type="button" data-footer-category="All">Blog</button></h2>
+        <ul class="footer-list">
+          <li><a href="#blog" data-footer-category="Guides">Guides</a></li>
+          <li><a href="#blog" data-footer-category="Best">Best</a></li>
+          <li><a href="#blog" data-footer-category="Review">Review</a></li>
+          <li><a href="#blog" data-footer-category="Compare">Compare</a></li>
+          <li><a href="#blog" data-footer-category="Glossary">Glossary</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-group" aria-labelledby="footer-security-title">
+        <h2 id="footer-security-title">Security</h2>
+        <ul class="footer-list">
+          <li><span>Security</span></li>
+          <li><span>Threat Database</span></li>
+          <li><span>Detection Rules</span></li>
+        </ul>
+      </nav>
+      <nav class="footer-group" aria-labelledby="footer-company-title">
+        <h2 id="footer-company-title">Company</h2>
+        <ul class="footer-list">
+          <li><span>About</span></li>
+          <li><span>Contact</span></li>
+          <li><span>Privacy Policy</span></li>
+          <li><span>Terms</span></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const categories = ["All", "Guides", "Best", "Review", "Compare", "Glossary"];
+
+    const articleTemplates = {
+      Guides: [
+        {
+          heading: "Start with the boundary",
+          body: [
+            "A useful security guide begins by defining the action boundary. List the tools an agent can call, the files it can read, and the network destinations it can reach. This inventory turns an abstract risk into a set of reviewable decisions.",
+            "Teams can use the <a href=\"#\">AgentGuard documentation</a> as a reference when separating trusted actions from actions that need review."
+          ]
+        },
+        {
+          heading: "Inspect the execution path",
+          body: [
+            "Trace the request from model output to the final tool call. Pay attention to transformed arguments, environment variables, inherited permissions, and any content returned by external systems.",
+            "A response that looks harmless at the model layer can become dangerous after it is converted into a shell command or file operation."
+          ],
+          note: "$ ag scan ./workspace --include-skills --include-mcp"
+        },
+        {
+          heading: "Add controls before execution",
+          body: [
+            "Place policy checks immediately before high-impact actions. The guard should have enough context to explain the request, identify the affected resource, and return an allow, deny, or review decision.",
+            "Review the <a href=\"#\">runtime protection model</a> before choosing which actions can proceed automatically."
+          ]
+        },
+        {
+          heading: "Verify and monitor",
+          body: [
+            "Test the control with expected operations, malformed inputs, and intentionally hostile examples. Record decisions in an audit trail so that false positives and missed cases can be corrected without losing context.",
+            "Repeat the test whenever tools, permissions, prompts, or dependencies change."
+          ]
+        }
+      ],
+      Best: [
+        {
+          heading: "How we evaluate the category",
+          body: [
+            "A useful shortlist needs a consistent evaluation frame. We look at deployment model, runtime coverage, component scanning, policy controls, evidence quality, and the effort required to reach a working setup.",
+            "Published claims are checked against public product pages and <a href=\"#\">technical documentation</a>."
+          ]
+        },
+        {
+          heading: "Capabilities that matter",
+          body: [
+            "The strongest tools make their protection boundary clear. Buyers should be able to tell which agent hosts are supported, which actions can be blocked, how sensitive data is handled, and which controls remain advisory.",
+            "Operational fit matters as much as a long feature list. A security product that teams cannot deploy or tune will not protect a production workflow."
+          ]
+        },
+        {
+          heading: "Questions to ask before buying",
+          body: [
+            "Ask for a live demonstration using your own agent workflow. Test a normal action, a suspicious tool call, and a dependency change. Confirm what is logged and which data leaves the local environment.",
+            "Use the <a href=\"#\">comparison checklist</a> to keep vendor evaluations consistent."
+          ]
+        },
+        {
+          heading: "Build a short pilot",
+          body: [
+            "Run the top candidates against one representative workflow for a fixed period. Measure setup time, blocked actions, review volume, and the clarity of each security decision.",
+            "A short pilot usually reveals integration gaps that are invisible in a feature table."
+          ]
+        }
+      ],
+      Review: [
+        {
+          heading: "Review scope",
+          body: [
+            "This review examines the product or technique through the lens of agent execution risk. The scope covers observable behavior, public documentation, setup flow, and the quality of the evidence available to operators.",
+            "The assessment avoids assumptions about features that cannot be verified from <a href=\"#\">public technical material</a>."
+          ]
+        },
+        {
+          heading: "What works well",
+          body: [
+            "The strongest part of the approach is the clear connection between a detected risk and the action that creates it. That makes findings easier to reproduce and gives engineering teams a concrete next step.",
+            "Good security feedback should explain both the trigger and the affected boundary."
+          ]
+        },
+        {
+          heading: "Where the limits appear",
+          body: [
+            "Coverage varies across agent hosts, tool protocols, and deployment modes. Teams should verify whether a control runs before execution, after execution, or only during a separate scan.",
+            "These distinctions shape the real protection level and should be visible in any production rollout."
+          ]
+        },
+        {
+          heading: "Final assessment",
+          body: [
+            "The approach is most useful when paired with clear ownership, a review process, and recurring validation. Teams should start with a narrow workflow, confirm the evidence, and expand coverage only after the controls behave predictably.",
+            "See the <a href=\"#\">implementation guide</a> for a practical evaluation sequence."
+          ]
+        }
+      ],
+      Compare: [
+        {
+          heading: "The comparison frame",
+          body: [
+            "This comparison focuses on the job each approach performs inside an AI agent workflow. We compare prevention point, supported actions, deployment model, policy depth, evidence, and operator experience.",
+            "Feature names can sound similar while protecting different parts of the execution path."
+          ]
+        },
+        {
+          heading: "Runtime coverage",
+          body: [
+            "Runtime controls evaluate actions close to execution. Static approaches inspect code, prompts, or components before use. Both can be valuable, but they answer different questions and produce different evidence.",
+            "The <a href=\"#\">runtime security overview</a> explains where each control sits."
+          ]
+        },
+        {
+          heading: "Operational tradeoffs",
+          body: [
+            "Inline enforcement adds policy decisions to the execution path and needs careful tuning. Offline scanning is easier to isolate but cannot evaluate every dynamic action. The right choice depends on workflow impact and acceptable review load.",
+            "Teams should test latency, false positives, audit quality, and the ability to recover from a blocked action."
+          ]
+        },
+        {
+          heading: "Choosing for your workflow",
+          body: [
+            "Choose based on the highest-impact action your agent can take. A coding assistant with shell access, an MCP-heavy research agent, and an automated deployment agent need different control depth.",
+            "Document the decision and revisit it when permissions or connected tools change."
+          ]
+        }
+      ],
+      Glossary: [
+        {
+          heading: "Definition",
+          body: [
+            "The term describes a security condition that can change how an AI agent selects, interprets, or executes an action. It matters because agent systems combine model output with tools, data, permissions, and external components.",
+            "The exact impact depends on where the condition enters the execution chain."
+          ]
+        },
+        {
+          heading: "How it happens",
+          body: [
+            "The condition often begins with untrusted content, an altered dependency, or a component whose behavior changes after approval. The agent then treats that input as trusted context and carries it into a tool decision.",
+            "See the <a href=\"#\">AI agent threat model</a> for a map of common entry points."
+          ]
+        },
+        {
+          heading: "Why it matters",
+          body: [
+            "Agents can turn a small change in context into a real command, network request, or file operation. The risk grows with autonomy, permission depth, and the number of external systems involved.",
+            "Security teams need evidence that connects the original input to the final action."
+          ]
+        },
+        {
+          heading: "How to reduce the risk",
+          body: [
+            "Use explicit trust boundaries, scan third-party components, limit permissions, and evaluate sensitive actions immediately before execution. Monitor approved components for later changes.",
+            "A <a href=\"#\">runtime guard</a> can provide an additional control point for high-impact actions."
+          ]
+        }
+      ]
+    };
+
+    const articleSeeds = [
+      { id: "prevent-mcp-response-spoofing", category: "Guides", date: "Jul 23, 2026", title: "How to Prevent MCP Response Spoofing", excerpt: "A practical workflow for validating MCP responses before they influence an agent's next tool call." },
+      { id: "secure-claude-code-workflow", category: "Guides", date: "Jul 18, 2026", title: "How to Secure a Claude Code Workflow", excerpt: "Map permissions, inspect tool calls, and add review points around high-impact coding actions." },
+      { id: "scan-mcp-server", category: "Guides", date: "Jul 12, 2026", title: "How to Scan an MCP Server Before Connecting It", excerpt: "A repeatable preflight process for reviewing code, dependencies, capabilities, and network behavior." },
+      { id: "protect-agent-secrets", category: "Guides", date: "Jul 5, 2026", title: "How to Protect Secrets in AI Agent Workspaces", excerpt: "Reduce accidental credential access without breaking the workflows developers rely on." },
+      { id: "best-mcp-security-tools", category: "Best", date: "Jul 21, 2026", title: "Best MCP Security Tools in 2026", excerpt: "A criteria-led shortlist for teams evaluating scanners, runtime controls, and trust registries." },
+      { id: "best-agent-runtime-security", category: "Best", date: "Jul 15, 2026", title: "Best AI Agent Runtime Security Platforms", excerpt: "Compare protection boundaries, deployment models, policy controls, and audit evidence." },
+      { id: "best-prompt-injection-scanners", category: "Best", date: "Jul 7, 2026", title: "Best Prompt Injection Scanners for Agent Teams", excerpt: "What to test when a scanner needs to cover prompts, tools, and external content." },
+      { id: "emerging-llm-agent-exploits", category: "Review", date: "Jul 20, 2026", title: "A Review of Emerging LLM Agent Exploit Vectors", excerpt: "An evidence-led look at how modern agent attacks move from untrusted input to real execution." },
+      { id: "agentguard-runtime-guard-review", category: "Review", date: "Jul 11, 2026", title: "AgentGuard Runtime Guard: Technical Review", excerpt: "A walkthrough of the protection model, deployment boundary, and operator experience." },
+      { id: "mcp-scanner-review", category: "Review", date: "Jun 29, 2026", title: "MCP Security Scanners: What the Evidence Shows", excerpt: "A review of detection coverage, reporting quality, and the limits of pre-connection analysis." },
+      { id: "agentguard-vs-lakera", category: "Compare", date: "Jul 17, 2026", title: "AgentGuard vs Lakera: Runtime and Prompt Security", excerpt: "Compare where each product operates and which AI security workflows they address." },
+      { id: "agentguard-vs-prompt-security", category: "Compare", date: "Jul 9, 2026", title: "AgentGuard vs Prompt Security: Features and Fit", excerpt: "A technical comparison for teams choosing controls across prompts, tools, and agent actions." },
+      { id: "runtime-vs-static-scanning", category: "Compare", date: "Jul 2, 2026", title: "Runtime Guard vs Static Agent Scanning", excerpt: "Understand the evidence, timing, and operational tradeoffs of two complementary approaches." },
+      { id: "agent-dependency-pollution", category: "Glossary", date: "Jul 19, 2026", title: "What Is Agent Dependency Pollution?", excerpt: "How compromised or misleading dependencies can alter an agent's behavior and trust boundary." },
+      { id: "tool-poisoning", category: "Glossary", date: "Jul 13, 2026", title: "What Is Tool Poisoning in AI Agents?", excerpt: "A clear definition of tool poisoning, common entry points, and practical controls." },
+      { id: "mcp-rug-pull", category: "Glossary", date: "Jul 6, 2026", title: "What Is an MCP Rug Pull?", excerpt: "Why a trusted MCP component can become risky after approval or installation." },
+      { id: "agent-runtime-security", category: "Glossary", date: "Jun 27, 2026", title: "What Is AI Agent Runtime Security?", excerpt: "The controls that evaluate and govern agent actions at the moment they execute." }
+    ];
+
+    const authorExamples = [
+      "Maya Chen",
+      "Daniel Okafor",
+      "Elena Park",
+      "AgentGuard Research"
+    ];
+
+    const readingTimeExamples = [7, 8, 6, 9, 10, 8, 7, 11, 9, 8, 10, 9, 7, 6, 5, 6, 7];
+
+    const faqExamples = {
+      "prevent-mcp-response-spoofing": [
+        {
+          question: "What is MCP response spoofing?",
+          answer: "MCP response spoofing occurs when an agent receives manipulated or misleading tool output and treats it as trusted context for its next action."
+        },
+        {
+          question: "Which MCP responses should be validated?",
+          answer: "Validate responses that can influence tool selection, file changes, shell commands, authentication decisions, or access to sensitive data."
+        },
+        {
+          question: "Can runtime controls block a spoofed response?",
+          answer: "Runtime controls can stop the resulting high-impact action when policy checks evaluate the response context immediately before execution."
+        }
+      ],
+      "best-mcp-security-tools": [
+        {
+          question: "What should an MCP security tool inspect?",
+          answer: "It should inspect server code, dependencies, declared capabilities, tool descriptions, network behavior, and actions taken during runtime."
+        },
+        {
+          question: "Do teams need both scanning and runtime protection?",
+          answer: "Pre-connection scanning and runtime protection cover different stages. Teams with high-impact agents often use both to reduce component and execution risk."
+        },
+        {
+          question: "How should teams evaluate an MCP security product?",
+          answer: "Test the product against a representative workflow and compare setup time, coverage, policy controls, evidence quality, false positives, and data handling."
+        }
+      ],
+      "tool-poisoning": [
+        {
+          question: "Is tool poisoning the same as prompt injection?",
+          answer: "The risks can overlap, but tool poisoning specifically changes or misrepresents a tool so that an agent makes an unsafe decision when selecting or using it."
+        },
+        {
+          question: "Can tool poisoning happen after approval?",
+          answer: "Yes. A tool or its metadata can change after an earlier review, which is why recurring validation and runtime monitoring are important."
+        }
+      ]
+    };
+
+    const articles = articleSeeds.map((article, index) => ({
+      ...article,
+      author: authorExamples[index % authorExamples.length],
+      readingTime: `${readingTimeExamples[index]} min read`,
+      faqItems: faqExamples[article.id] || []
+    }));
+
+    let activeCategory = "All";
+    let activeArticleId = null;
+    let searchQuery = "";
+    let sectionObserver = null;
+
+    const listView = document.getElementById("list-view");
+    const detailView = document.getElementById("detail-view");
+    const articleGrid = document.getElementById("article-grid");
+    const relatedGrid = document.getElementById("related-grid");
+    const categoryTabs = document.getElementById("category-tabs");
+    const searchInput = document.getElementById("blog-search");
+    const clearSearchButton = document.getElementById("clear-search");
+    const emptyState = document.getElementById("empty-state");
+    const resultCount = document.getElementById("result-count");
+    const activeFilterLabel = document.getElementById("active-filter-label");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileNav = document.getElementById("mobile-nav");
+    const desktopMenuTriggers = Array.from(document.querySelectorAll(".nav-menu-trigger"));
+    const mobileNavTriggers = Array.from(document.querySelectorAll(".mobile-nav-trigger"));
+
+    function escapeHtml(value) {
+      return value.replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      })[character]);
+    }
+
+    function editDistance(left, right) {
+      const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+      for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+        const current = [leftIndex];
+        for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+          const substitution = previous[rightIndex - 1] + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1);
+          current[rightIndex] = Math.min(
+            current[rightIndex - 1] + 1,
+            previous[rightIndex] + 1,
+            substitution
+          );
+        }
+        previous.splice(0, previous.length, ...current);
+      }
+      return previous[right.length];
+    }
+
+    function fuzzyScore(query, value) {
+      const needle = query.toLowerCase().trim();
+      const haystack = value.toLowerCase();
+      if (!needle) return 1;
+      if (haystack.includes(needle)) return 100 - haystack.indexOf(needle);
+
+      const queryTokens = needle.split(/\s+/).filter(Boolean);
+      const valueTokens = haystack.match(/[a-z0-9]+/g) || [];
+      let totalScore = 0;
+
+      for (const queryToken of queryTokens) {
+        let bestTokenScore = 0;
+        for (const valueToken of valueTokens) {
+          const valueExtendsQuery = queryToken.length >= 3 && valueToken.startsWith(queryToken);
+          const queryExtendsValue = valueToken.length >= 3
+            && queryToken.startsWith(valueToken)
+            && queryToken.length - valueToken.length <= 2;
+          if (valueExtendsQuery || queryExtendsValue) {
+            bestTokenScore = Math.max(bestTokenScore, 55);
+            continue;
+          }
+          const allowedDistance = queryToken.length >= 7 ? 2 : 1;
+          if (Math.abs(queryToken.length - valueToken.length) <= allowedDistance) {
+            const distance = editDistance(queryToken, valueToken);
+            if (distance <= allowedDistance) {
+              bestTokenScore = Math.max(bestTokenScore, 40 - distance * 8);
+            }
+          }
+        }
+        if (bestTokenScore === 0) return 0;
+        totalScore += bestTokenScore;
+      }
+
+      return totalScore;
+    }
+
+    function getFilteredArticles() {
+      return articles
+        .filter((article) => activeCategory === "All" || article.category === activeCategory)
+        .map((article) => ({
+          article,
+          score: fuzzyScore(searchQuery, `${article.title} ${article.category} ${article.excerpt}`)
+        }))
+        .filter((result) => result.score > 0)
+        .sort((left, right) => searchQuery ? right.score - left.score : articles.indexOf(left.article) - articles.indexOf(right.article))
+        .map((result) => result.article);
+    }
+
+    function cardMarkup(article, related = false) {
+      const action = related ? "" : `
+        <span class="card-action">
+          Read article
+          <i data-lucide="arrow-right" aria-hidden="true"></i>
+        </span>`;
+
+      return `
+        <article class="${related ? "related-card" : "article-card"}">
+          <button class="${related ? "related-button" : "card-button"}" type="button" data-article-id="${article.id}" aria-label="Read ${escapeHtml(article.title)}">
+            <div class="card-meta">
+              <span class="category-label">${escapeHtml(article.category)}</span>
+              <time>${escapeHtml(article.date)}</time>
+            </div>
+            <h2 class="card-title">${escapeHtml(article.title)}</h2>
+            ${related ? "" : `<p class="card-excerpt">${escapeHtml(article.excerpt)}</p>`}
+            <div class="card-byline">
+              <span>By <span class="byline-author">${escapeHtml(article.author)}</span></span>
+              <span class="meta-dot" aria-hidden="true">/</span>
+              <span>${escapeHtml(article.readingTime)}</span>
+            </div>
+            ${action}
+          </button>
+        </article>`;
+    }
+
+    function renderCategoryTabs() {
+      categoryTabs.innerHTML = categories.map((category) => `
+        <button
+          class="category-tab"
+          type="button"
+          role="tab"
+          aria-selected="${category === activeCategory}"
+          data-category="${category}"
+        >${category}</button>
+      `).join("");
+    }
+
+    function renderList() {
+      const filteredArticles = getFilteredArticles();
+      articleGrid.innerHTML = filteredArticles.map((article) => cardMarkup(article)).join("");
+      emptyState.hidden = filteredArticles.length !== 0;
+      articleGrid.hidden = filteredArticles.length === 0;
+      resultCount.textContent = `${filteredArticles.length} ${filteredArticles.length === 1 ? "article" : "articles"}`;
+      activeFilterLabel.textContent = searchQuery
+        ? `Results for "${searchQuery}"`
+        : activeCategory === "All" ? "Latest research and guidance" : `${activeCategory} articles`;
+      clearSearchButton.classList.toggle("visible", Boolean(searchQuery));
+      clearSearchButton.setAttribute("aria-hidden", String(!searchQuery));
+      renderCategoryTabs();
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function sectionMarkup(section, index) {
+      const paragraphs = section.body.map((paragraph) => `<p>${paragraph}</p>`).join("");
+      const note = section.note ? `<div class="code-note">${escapeHtml(section.note)}</div>` : "";
+      return `
+        <section class="article-section" id="section-${index + 1}">
+          <h2>${escapeHtml(section.heading)}</h2>
+          ${paragraphs}
+          ${note}
+        </section>`;
+    }
+
+    function faqMarkup(item, index) {
+      return `
+        <details class="faq-item"${index === 0 ? " open" : ""}>
+          <summary>
+            <span>${escapeHtml(item.question)}</span>
+            <i class="faq-icon" data-lucide="chevron-down" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>${escapeHtml(item.answer)}</p>
+          </div>
+        </details>`;
+    }
+
+    function getRelatedArticles(article) {
+      const sameCategory = articles.filter((candidate) => candidate.category === article.category && candidate.id !== article.id);
+      const otherCategories = articles.filter((candidate) => candidate.category !== article.category && candidate.id !== article.id);
+      return [...sameCategory, ...otherCategories].slice(0, 6);
+    }
+
+    function updateTocObserver() {
+      if (sectionObserver) sectionObserver.disconnect();
+      const tocLinks = Array.from(document.querySelectorAll(".toc-link"));
+      const sections = Array.from(document.querySelectorAll(".article-section"));
+
+      sectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)[0];
+        if (!visible) return;
+        tocLinks.forEach((link) => {
+          link.classList.toggle("active", link.dataset.target === visible.target.id);
+        });
+      }, { rootMargin: "-18% 0px -68% 0px", threshold: 0 });
+
+      sections.forEach((section) => sectionObserver.observe(section));
+    }
+
+    function renderDetail(article) {
+      const sections = articleTemplates[article.category];
+      activeArticleId = article.id;
+      document.getElementById("detail-category-breadcrumb").textContent = article.category;
+      document.getElementById("detail-category").textContent = article.category;
+      document.getElementById("detail-date").textContent = article.date;
+      document.getElementById("article-title").textContent = article.title;
+      document.getElementById("article-deck").textContent = article.excerpt;
+      document.getElementById("detail-author").textContent = article.author;
+      document.getElementById("detail-reading-time").textContent = article.readingTime;
+      document.getElementById("article-body").innerHTML = sections.map(sectionMarkup).join("");
+      const faqSection = document.getElementById("faq-section");
+      const hasFaq = article.faqItems.length > 0;
+      faqSection.hidden = !hasFaq;
+      document.getElementById("faq-list").innerHTML = hasFaq
+        ? article.faqItems.map(faqMarkup).join("")
+        : "";
+
+      const tocItems = sections.map((section, index) => ({
+        id: `section-${index + 1}`,
+        label: section.heading
+      }));
+      if (hasFaq) tocItems.push({ id: "faq-section", label: "Frequently Asked Questions" });
+      document.getElementById("toc-list").innerHTML = tocItems.map((item, index) => `
+        <li>
+          <button class="toc-link${index === 0 ? " active" : ""}" type="button" data-target="${item.id}">
+            ${escapeHtml(item.label)}
+          </button>
+        </li>
+      `).join("");
+
+      relatedGrid.innerHTML = getRelatedArticles(article).map((relatedArticle) => cardMarkup(relatedArticle, true)).join("");
+      listView.hidden = true;
+      detailView.hidden = false;
+      document.title = `${article.title} | AgentGuard Blog`;
+      window.scrollTo({ top: 0, behavior: "instant" });
+      updateTocObserver();
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function showList(options = {}) {
+      activeArticleId = null;
+      listView.hidden = false;
+      detailView.hidden = true;
+      document.title = "AgentGuard Blog Prototype";
+      if (!options.preserveScroll) window.scrollTo({ top: 0, behavior: "instant" });
+      if (sectionObserver) sectionObserver.disconnect();
+    }
+
+    function applyBlogCategory(category) {
+      activeCategory = category;
+      searchInput.value = "";
+      searchQuery = "";
+      renderList();
+      window.location.hash = "blog";
+      showList();
+    }
+
+    function closeDesktopMenus(exceptTrigger = null) {
+      desktopMenuTriggers.forEach((trigger) => {
+        if (trigger === exceptTrigger) return;
+        trigger.setAttribute("aria-expanded", "false");
+        document.getElementById(trigger.getAttribute("aria-controls")).hidden = true;
+      });
+    }
+
+    function closeMobileSubmenus() {
+      mobileNavTriggers.forEach((trigger) => {
+        trigger.setAttribute("aria-expanded", "false");
+        document.getElementById(trigger.getAttribute("aria-controls")).hidden = true;
+      });
+    }
+
+    function closeMobileNav() {
+      mobileNav.hidden = true;
+      closeMobileSubmenus();
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      mobileMenuButton.setAttribute("aria-label", "Open menu");
+      mobileMenuButton.innerHTML = '<i data-lucide="menu" aria-hidden="true"></i>';
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function navigateToArticle(articleId, updateHash = true) {
+      const article = articles.find((candidate) => candidate.id === articleId);
+      if (!article) {
+        showList();
+        return;
+      }
+      if (updateHash) window.location.hash = `article/${article.id}`;
+      renderDetail(article);
+    }
+
+    function syncRoute() {
+      const match = window.location.hash.match(/^#article\/(.+)$/);
+      if (match) {
+        navigateToArticle(match[1], false);
+      } else {
+        showList();
+      }
+    }
+
+    categoryTabs.addEventListener("click", (event) => {
+      const tab = event.target.closest("[data-category]");
+      if (!tab) return;
+      activeCategory = tab.dataset.category;
+      renderList();
+    });
+
+    searchInput.addEventListener("input", () => {
+      searchQuery = searchInput.value.trim();
+      renderList();
+    });
+
+    clearSearchButton.addEventListener("click", () => {
+      searchInput.value = "";
+      searchQuery = "";
+      renderList();
+      searchInput.focus();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".nav-menu")) closeDesktopMenus();
+
+      const authorLink = event.target.closest("[data-author-link]");
+      if (authorLink) {
+        event.preventDefault();
+        return;
+      }
+
+      const footerCategoryLink = event.target.closest("[data-footer-category]");
+      if (footerCategoryLink) {
+        event.preventDefault();
+        applyBlogCategory(footerCategoryLink.dataset.footerCategory);
+        return;
+      }
+
+      const articleButton = event.target.closest("[data-article-id]");
+      if (articleButton) navigateToArticle(articleButton.dataset.articleId);
+
+      const tocButton = event.target.closest(".toc-link");
+      if (tocButton) {
+        document.getElementById(tocButton.dataset.target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.hash = "blog";
+      showList();
+    });
+
+    document.querySelectorAll('a[href="#blog"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (link.hasAttribute("data-footer-category")) return;
+        event.preventDefault();
+        window.location.hash = "blog";
+        showList();
+        closeMobileNav();
+      });
+    });
+
+    desktopMenuTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const wasOpen = trigger.getAttribute("aria-expanded") === "true";
+        closeDesktopMenus(trigger);
+        trigger.setAttribute("aria-expanded", String(!wasOpen));
+        document.getElementById(trigger.getAttribute("aria-controls")).hidden = wasOpen;
+      });
+    });
+
+    mobileNavTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const wasOpen = trigger.getAttribute("aria-expanded") === "true";
+        mobileNavTriggers.forEach((otherTrigger) => {
+          const isCurrent = otherTrigger === trigger;
+          otherTrigger.setAttribute("aria-expanded", String(isCurrent && !wasOpen));
+          document.getElementById(otherTrigger.getAttribute("aria-controls")).hidden = !isCurrent || wasOpen;
+        });
+      });
+    });
+
+    mobileMenuButton.addEventListener("click", () => {
+      const isOpen = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+      mobileNav.hidden = isOpen;
+      if (isOpen) closeMobileSubmenus();
+      mobileMenuButton.innerHTML = `<i data-lucide="${isOpen ? "menu" : "x"}" aria-hidden="true"></i>`;
+      if (window.lucide) window.lucide.createIcons();
+    });
+
+    mobileNav.addEventListener("click", (event) => {
+      if (event.target.closest(".mobile-nav-link")) closeMobileNav();
+    });
+
+    window.addEventListener("hashchange", syncRoute);
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768 && !mobileNav.hidden) closeMobileNav();
+      if (window.innerWidth <= 768) closeDesktopMenus();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      const hasOpenDesktopMenu = desktopMenuTriggers.some((trigger) => trigger.getAttribute("aria-expanded") === "true");
+      if (hasOpenDesktopMenu) {
+        closeDesktopMenus();
+        return;
+      }
+
+      if (!mobileNav.hidden) {
+        closeMobileNav();
+        mobileMenuButton.focus();
+        return;
+      }
+
+      if (!detailView.hidden) {
+        window.location.hash = "blog";
+        showList();
+      }
+    });
+
+    renderList();
+    syncRoute();
+    if (window.lucide) window.lucide.createIcons();
+  </script>
+</body>
+</html>
