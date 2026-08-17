@@ -1,6 +1,6 @@
 # AgentGuard Knowledge Base
 
-Private mirror of the AgentGuard Feishu knowledge base.
+Public knowledge base for AgentGuard SEO, growth, product design, Agent workflows, and CMS delivery.
 
 - Source: [AgentGuard SEO 从 0 到 1 增长执行方案](https://acntglrfp7bm.feishu.cn/wiki/PEl8wr8D7ipWSEkMOMfcZvPMnjd?fromScene=spaceOverview)
 - Exported at: 2026-08-15T13:31:06Z
@@ -8,8 +8,6 @@ Private mirror of the AgentGuard Feishu knowledge base.
 - Documents: 36
 - Spreadsheets: 2
 - Bases: 3
-
-> This repository contains internal/client delivery material. Review and sanitize it before changing repository visibility.
 
 ## Contents
 
